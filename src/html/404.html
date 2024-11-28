@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>genr234's Lab</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            pivot.init({
+                selector: '.pivot',
+                perspective: '500',
+                sensitivity: 10,
+                shine: true,
+                shadow: true,
+                scale: true,
+            });
+
+            const timeElement = document.getElementById("clock");
+
+            function updateTime() {
+                const now = new Date();
+                const hours = now.getHours();
+                const minutes = now.getMinutes();
+                const seconds = now.getSeconds();
+
+                const clockStr = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+                timeElement.innerText = clockStr;
+            }
+
+            updateTime();
+
+            setInterval(updateTime, 1000);
+        });
+    </script>
+    <style>
+        .drop-shadow-sm {
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .glassphormism {
+            background: rgba(255, 255, 255, 0.35);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+
+        .glassphormism-1 {
+            background: rgba(255, 255, 255, 0.35);
+            opacity: 0.9;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+
+        .glassphormism-2 {
+            background: rgba(255, 255, 255, 0.35);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            -webkit-backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+
+        .glassphormism-2:hover {
+            background: rgba(233, 233, 233, 0.451);
+            backdrop-filter: blur(10px);
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .glassphormism:hover {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .monospace-slab {
+            font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+            font-weight: 300;
+        }
+
+        .rounded-sans {
+            font-family: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
+            font-weight: 300;
+        }
+
+        :root {
+            background: url(/background) no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container-1 {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/transition-style">
+    <script src="https://cdn.rawgit.com/wnda/pivot/master/pivot.js"></script>
+</head>
+
+<body class="min-h-screen">
+    <main class="container-1 pt-32 lg:size-96">
+        <div class="max-w-4xl mx-auto mb-28">
+            <div class="glassphormism-1 bg-opacity-30 p-6 rounded-md pivot" transition-style="in:square:center">
+                <h1
+                    class="text-4xl sm:text-4xl font-extrabold flex justify-center humanist text-gray-800 drop-shadow-sm">
+                    404</h1>
+                <p class="justify-center flex text-gray-700 drop-shadow-sm mt-2">Page not found  <img
+                        src="/static/heavysob.png" alt=":heavysob:" class="justify-center flex size-6"></p>
+            </div>
+        </div>
+    </main>
+    <footer class="glassphormism-2 w-screen fixed bottom-0">
+        <div class="container-1">
+            <div class="flex justify-between items-center">
+                <a class="text-gray-600 monospace-slab font-bold underline" href="https://github.com/genr234">github</a>
+                <a class="text-gray-600 monospace-slab font-bold underline"
+                    href="mailto:riccardocavallaro2020@outlook.it">email</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>genr234's Lab</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('login').addEventListener('click', function () {
+                window.location.href = "http://identity.genr234.com";
+            });
+        });
+    </script>
+    <style>
+        .drop-shadow-sm {
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .glassphormism {
+            background: rgba(255, 255, 255, 0.35);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+
+        .glassphormism-1 {
+            background: rgba(255, 255, 255, 0.35);
+            opacity: 0.9;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+
+        .glassphormism-2 {
+            background: rgba(255, 255, 255, 0.35);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            -webkit-backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+
+        .glassphormism-2:hover {
+            background: rgba(233, 233, 233, 0.451);
+            backdrop-filter: blur(10px);
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .glassphormism:hover {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .monospace-slab {
+            font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+            font-weight: 300;
+        }
+
+        .rounded-sans {
+            font-family: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
+            font-weight: 300;
+        }
+
+        .humanist {
+            font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+            font-weight: 300;
+        }
+
+        .handwritten {
+            font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive;
+            font-weight: 300;
+        }
+
+        :root {
+            background: url(/background) no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container-1 {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+    </style>
+    <link rel="icon" type="image/png" href="/static/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg" />
+    <link rel="shortcut icon" href="/static/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Lab" />
+    <link rel="manifest" href="/static/site.webmanifest" />
+</head>
+
+<body class="min-h-screen">
+    <header class="p-6 glassphormism fixed w-full top-0 z-50">
+        <div class="flex flex-col sm:flex-row justify-between items-center">
+            <div></div>
+            <button id="login" class=" text-gray-700 rounded-sans font-extralight glassphormism-2 rounded-md px-4 py-2">
+                Already In?
+            </button>
+        </div>
+    </header>
+    <main class="container-1 pt-32 lg:size-96">
+        <div class="max-w-4xl mx-auto mb-28 glassphormism-1 p-11 rounded-md">
+            <h1 class="text-4xl font-bold humanist drop-shadow-sm">Apply for access</h1>
+            <div class="inline justify-center">
+                <p class="text-xl text-gray-600 italic inline justify-center">Applications are open for everyone under
+                    18!
+                    <img src="/static/blahaj-heart.png" class="size-6 inline justify-center">
+                </p>
+            </div>
+            <form class="mt-8" action="/form/" method="POST">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Choose an username</label>
+                    <input
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline placeholder:italic placeholder:opacity-80 placeholder:text-sm"
+                        id="username" type="text" name="username" placeholder="You can change it later" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="message">Write a message!</label>
+                    <input
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline placeholder:italic placeholder:opacity-80 placeholder:text-sm"
+                        id="message" type="text" name="message" placeholder="Write whatever you want here." required>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
+                    <input
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline placeholder:italic placeholder:opacity-80 placeholder:text-sm"
+                        id="email" type="email" name="email" placeholder="johndoe@funkyemail.com" required>
+                </div>
+                <div class="py-2" />
+                <button
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    type="submit">
+                    Apply
+                </button>
+            </form>
+        </div>
+    </main>
+    <footer class=" glassphormism-2 w-screen fixed bottom-0">
+        <div class="container-1">
+            <div class="flex justify-between items-center">
+                <a class="text-gray-600 monospace-slab font-bold underline" href="https://github.com/genr234">github</a>
+                <a class="text-gray-600 monospace-slab font-bold underline"
+                    href="mailto:riccardocavallaro2020@outlook.it">email</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
