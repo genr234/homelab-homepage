@@ -1,6 +1,7 @@
 import { Elysia } from "elysia";
 import { html } from "@elysiajs/html";
 import { BunFile } from "bun";
+import env from "./env";
 
 interface FormBody {
 	username: string;
@@ -27,16 +28,13 @@ const handleForm = async (body: FormBody): Promise<void> => {
 			},
 		],
 	};
-	fetch(
-		"https://discord.com/api/webhooks/1311443699158351882/aD-eJiiJuZCmJjXvHefkKmiHOblaDNfRxv-6eqD37omzY2MwaMEleSkERpgO85VZUWrC",
-		{
-			method: "POST",
-			body: JSON.stringify(content),
-			headers: {
-				"Content-Type": "application/json",
-			},
+	fetch(env.DISCORD_WEBHOOK_URL, {
+		method: "POST",
+		body: JSON.stringify(content),
+		headers: {
+			"Content-Type": "application/json",
 		},
-	)
+	})
 		.then((res) => res.text())
 		.then(console.log)
 		.catch(console.error);
@@ -67,7 +65,7 @@ const app = new Elysia()
 			return Bun.file("src/html/404.html").text();
 		}
 	})
-	.listen(process.env.PORT || 3000);
+	.listen(env.PORT);
 
 console.log(
 	`🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`,
