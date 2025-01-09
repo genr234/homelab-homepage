@@ -1,8 +1,8 @@
 {
-  "name": "elysia",
+  "name": "server-homepage",
   "version": "1.0.50",
   "scripts": {
-    "run": "bun run src/index.ts",
+    "serve": "bun run src/index.ts",
     "dev": "bun run --watch src/index.ts"
   },
   "dependencies": {
@@ -13,5 +13,5 @@
   "devDependencies": {
     "bun-types": "latest"
   },
-  "module": "src/index.js"
+  "module": "src/index.ts"
 }
